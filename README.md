@@ -2,10 +2,11 @@
 Working Code to use yolo in the ros2 environment.
 
 **Ensure you have Darknet installed and the yolo cfg and weights file downloaded** 
+(This Repo utilises Yolo-v3)
 
 Contains two Nodes:
 ### People_detector
-Code used to invoke YOLO within the ros2 environment to detect object, mainly people in this use case
+Code used to invoke YOLO within the ros2 environment to detect object, mainly people in this use case however, it works on all objects.
 
 ### Webcam
 Used to run the people detector algorithim using a regular webcam

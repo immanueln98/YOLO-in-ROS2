@@ -12,7 +12,9 @@ class ObjectDetector(Node):
         super().__init__('peopleDetector')
         self.subscription = self.create_subscription(Image, '/image/bgr', self.detect_objects, 10)
         self.publisher = self.create_publisher(Image, 'output_image', 10)
+        #add the absolute paths to your YOLO weights and cfg file
         self.net = cv2.dnn.readNet("/home/imanuel/yolov3.weights", "/home/imanuel/darknet/cfg/yolov3.cfg")
+        #add path to coco.names within the darknet folder
         with open("/home/imanuel/darknet/data/coco.names", "r") as f:
             self.classes = [line.strip() for line in f.readlines()]
         layer_names = self.net.getLayerNames()
@@ -27,7 +29,7 @@ class ObjectDetector(Node):
         start = time.time()
         outs = self.net.forward(self.output_layers)
         end = time.time()
-        print("[INFO] YOLO took {:.6f} seconds".format(end - start))
+        print("[INFO] YOLO-v3 took {:.6f} seconds".format(end - start))
         class_ids = []
         confidences = []
         boxes = []

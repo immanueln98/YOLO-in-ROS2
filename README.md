@@ -19,8 +19,8 @@ Used to run the people detector algorithim using a regular webcam
 5. Run **webcam_py** in a separate terminal
 6. In another terminal, ros2 run rqt_image_view and select the output image topic to view live results.
 
-**Tested on:**
-Open-CV 4.7.0
+**Tested on:**/
+Open-CV 4.7.0/
 Ubuntu 20.04
 ROS2 Foxy
 
